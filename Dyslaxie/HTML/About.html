@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Dyslaxie</title>
+</head>
+<body>
+<header class="header">
+    <div class="left-section">
+        <div class="logo">
+            <img src="../img/dyslaxie_logo.jpeg" alt="Dyslaxie logo" class="logo-img">
+        </div>
+        <div class="separator"></div>
+        <nav class="nav-menu">
+            <a href="index.html" data-pt="Home" data-en="Home"></a>
+            <a href="About.html" data-pt="Sobre" data-en="About"></a>
+            <a href="research.html" data-pt="Pesquisa" data-en="Research"></a>
+            <a href="contact.html" data-pt="Contato" data-en="Contact"></a>
+        </nav>
+    </div>
+    <div class="actions">
+        <span class="language-switch">
+            <a class="btn-language" onclick="switchLanguage('pt')">Pt |</a>
+            <a class="btn-language" onclick="switchLanguage('en')">En</a>
+        </span>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const savedLanguage = localStorage.getItem('language') || (navigator.language.startsWith('en') ? 'en' : 'pt');
+                switchLanguage(savedLanguage);
+            });
+
+            function switchLanguage(language) {
+                const elements = document.querySelectorAll('[data-en], [data-pt]');
+
+                elements.forEach(element => {
+                    const text = element.getAttribute(`data-${language}`);
+                    if (text) {
+                        element.innerText = text;
+                    }
+                });
+                localStorage.setItem('language', language);
+            }
+        </script>
+    </div>
+</header>
+
+<h1 data-pt="Quem somos" data-en="Who we are"></h1>
+
+<section class="text-image right">
+    <div class="container">
+        <img class="characters men" src="../img/Menino_pensando.jpeg">
+        <article>
+            <p data-pt="Desde os sete anos, eu sempre amei ler. Podia passar horas com meus livros sem perceber nada do mundo ao meu redor. Porém, a dificuldade que era esperada de uma criança lendo em voz alta persistiu por mais tempo que o normal.
+            A falta de conhecimento sobre dislexia e sobre como a situação é muito mais complexa do que simplesmente não conseguir ler, fez com que eu passasse anos pensando que era burra por ser incapaz de fazer uma leitura simples em voz alta.
+            Era difícil entender como eu podia ler tão bem na minha cabeça, mas soar como uma criança de seis anos ao ler qualquer texto para meus colegas."
+               data-en="Since I was seven, I've always loved reading. I could spend hours with my books without noticing anything around me. However, the difficulty that was expected from a child reading out loud lasted longer than usual.
+               The lack of knowledge about dyslexia and how it’s much more complex than just being unable to read, made me spend years thinking I was dumb for not being able to read out loud.
+               It was hard to understand how I could read so well in my mind but sound like a six-year-old when reading any text to my classmates.">
+            </p>
+        </article>
+    </div>
+</section>
+
+<section class="text-image left">
+    <div class="container">
+        <article>
+            <p data-pt="Só aos 16 anos descobri que havia novos tipos de dislexia. Percebi que não é simplesmente 'preto no branco', e sim um distúrbio cognitivo muito mais complexo, com tipos, níveis e características diferentes.
+            Por isso, o Dyslaxie foi criado com o intuito de ajudar e conscientizar pessoas como eu. Queremos mostrar que a dislexia é muito mais complexa e interessante do que se costuma falar, e que ela não precisa ser um obstáculo. É apenas mais um desafio que, com as ferramentas certas, podemos superar."
+               data-en="Only at 16 did I discover that there were different types of dyslexia. I realized it’s not simply 'black and white,' but a much more complex cognitive disorder with various types, levels, and characteristics.
+               This is why Dyslaxie was created: to help and raise awareness for people like me. We want to show that dyslexia is far more complex and interesting than people usually think, and it doesn’t have to be an obstacle. It’s just another challenge that, with the right tools, we can overcome.">
+            </p>
+        </article>
+        <img class="characters men" src="../img/Menino_comemorando.jpeg">
+    </div>
+</section>
+
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLanguage = localStorage.getItem('language') || (navigator.language.startsWith('en') ? 'en' : 'pt');
+        switchLanguage(savedLanguage);
+    });
+
+    function switchLanguage(language) {
+        const elements = document.querySelectorAll('[data-en], [data-pt]');
+        elements.forEach(element => {
+            const text = element.getAttribute(`data-${language}`);
+            if (text) {
+                element.innerText = text;
+            }
+        });
+        localStorage.setItem('language', language);
+    }
+</script>
+</body>
+</html>

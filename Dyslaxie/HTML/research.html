@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Dyslaxie</title>
+</head>
+<body>
+<header class="header">
+    <div class="left-section">
+        <div class="logo">
+            <img src="../img/dyslaxie_logo.jpeg" alt="Dyslaxie logo" class="logo-img">
+        </div>
+        <div class="separator"></div>
+        <nav class="nav-menu">
+            <a href="index.html" data-pt="Home" data-en="Home"></a>
+            <a href="About.html" data-pt="Sobre" data-en="About"></a>
+            <a href="research.html" data-pt="Pesquisa" data-en="Research"></a>
+            <a href="contact.html" data-pt="Contato" data-en="Contact"></a>
+        </nav>
+    </div>
+    <div class="actions">
+        <span class="language-switch">
+            <a class="btn-language" onclick="switchLanguage('pt')">Pt |</a>
+            <a class="btn-language" onclick="switchLanguage('en')">En</a>
+        </span>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const savedLanguage = localStorage.getItem('language') || (navigator.language.startsWith('en') ? 'en' : 'pt');
+                switchLanguage(savedLanguage);
+            });
+
+            function switchLanguage(language) {
+                const elements = document.querySelectorAll('[data-en], [data-pt]');
+
+                elements.forEach(element => {
+                    const text = element.getAttribute(`data-${language}`);
+                    if (text) {
+                        element.innerText = text;
+                    }
+                });
+                localStorage.setItem('language', language);
+            }
+        </script>
+    </div>
+</header>
+<h1 data-pt="Leia mais sobre a dislexia!" data-en="Read more about dyslexia!"></h1>
+
+<div class="card_container">
+    <div class="card">
+        <img src="../img/imãs%20de%20letras.jpg" class="size" alt="Capa do livro">
+        <div class="title" data-pt="Subtipos de Dislexia do Desenvolvimento Descritos no Português Brasileiro: Uma Revisão Integrativa" data-en="Developmental Dyslexia Subtypes Described in Brazilian Portuguese: An Integrative Review">
+        </div>
+        <div class="author" data-pt="
+        Marina Musso Aurich
+        Camila Batista Peixoto
+        Luciano da Silva Amorim
+        " data-en="
+        Marina Musso Aurich
+        Camila Batista Peixoto
+        Luciano da Silva Amorim
+        ">
+        </div>
+        <a href="https://www.scielo.br/j/pusf/a/sXRsSZgcHNqVNX4L9ys3w4B/?format=pdf&lang=pt" target="_blank" class="btn read main" data-pt="Leia mais!" data-en="Read more!">Leia mais!</a>
+    </div>
+
+    <div class="card">
+        <img src="../img/dislexia%20em%20letras%20de%20missanga.jpg" class="size" alt="Capa do livro">
+        <div class="title" data-pt="Dislexia: um olhar além das dificuldades" data-en="Dyslexia: a look beyond difficulties">
+        </div>
+        <div class="author" data-pt="
+        Marília Forte Irineu
+        Aratrícia Maria Martins Freire
+        Ilaneide Souto Marques
+
+
+
+
+        " data-en="
+        Marília Forte Irineu
+        Aratrícia Maria Martins Freire
+        Ilaneide Souto Marques
+
+
+        ">
+        </div>
+        <a href="https://editorarealize.com.br/editora/anais/conedu/2019/TRABALHO_EV127_MD1_SA8_ID9463_17082019193535.pdf" target="_blank" class="btn read main" data-pt="Leia mais!" data-en="Read more!"></a>
+    </div>
+
+    <div class="card">
+        <img src="../img/menina_confusa.jpg" class="size" alt="Capa do livro">
+        <div class="title" data-pt="Impacto do diagnóstico precoce e tardio da dislexia - compreendendo esse transtorno" data-en="Impact of early and late diagnosis of dyslexia - understanding this disorder">
+        </div>
+        <div class="author" data-pt="
+        Patricia Cristina Pinto Carceres
+        Priscila Covre
+
+
+
+        " data-en="
+        Patricia Cristina Pinto Carceres
+        Priscila Covre
+
+
+        ">
+        </div>
+        <a href="https://pepsic.bvsalud.org/pdf/psicoped/v35n108/05.pdf" target="_blank" class="btn read main" data-pt="Leia mais!" data-en="Read more!"></a>
+    </div>
+
+    <div class="card">
+        <img src="../img/menino_confuso.jpg" class="size" alt="Capa do livro">
+        <div class="title" data-pt="A dislexia e os desafios no processo de aprendizagem da língua portuguesa" data-en="Dyslexia and the challenges in the Portuguese language learning process">
+        </div>
+        <div class="author" data-pt="
+        Gabriele Silva Assunção
+
+
+
+
+
+
+        " data-en="
+        Gabriele Silva Assunção
+
+
+
+        ">
+        </div>
+        <a href="https://www.dislexia.org.br/wp-content/uploads/2018/09/ASSUN%C3%87%C3%83O-Gabrielle.pdf" target="_blank" class="btn read main" data-pt="Leia mais!" data-en="Read more!">Leia mais!</a>
+    </div>
+</div>
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLanguage = localStorage.getItem('language') || (navigator.language.startsWith('en') ? 'en' : 'pt');
+        switchLanguage(savedLanguage);
+    });
+
+    function switchLanguage(language) {
+        const elements = document.querySelectorAll('[data-en], [data-pt]');
+        elements.forEach(element => {
+            const text = element.getAttribute(`data-${language}`);
+            if (text) {
+                element.innerText = text;
+            }
+        });
+        localStorage.setItem('language', language);
+    }
+</script>
+</body>
+</html>

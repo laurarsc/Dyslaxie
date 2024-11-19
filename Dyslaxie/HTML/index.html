@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Dyslaxie</title>
+</head>
+<body>
+<header class="header">
+    <div class="left-section">
+        <div class="logo">
+            <img src="../img/dyslaxie_logo.jpeg" alt="Dyslaxie logo" class="logo-img">
+        </div>
+        <div class="separator"></div>
+        <nav class="nav-menu">
+            <a href="index.html" data-pt="Home" data-en="Home"></a>
+            <a href="About.html" data-pt="Sobre" data-en="About"></a>
+            <a href="research.html" data-pt="Pesquisa" data-en="Research"></a>
+            <a href="contact.html" data-pt="Contato" data-en="Contact"></a>
+        </nav>
+    </div>
+    <div class="actions">
+        <span class="language-switch">
+            <a class="btn-language" onclick="switchLanguage('pt')">Pt |</a>
+            <a class="btn-language" onclick="switchLanguage('en')">En</a>
+        </span>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const savedLanguage = localStorage.getItem('language') || (navigator.language.startsWith('en') ? 'en' : 'pt');
+                switchLanguage(savedLanguage);
+            });
+
+            function switchLanguage(language) {
+                const elements = document.querySelectorAll('[data-en], [data-pt]');
+
+                elements.forEach(element => {
+                    const text = element.getAttribute(`data-${language}`);
+                    if (text) {
+                        element.innerText = text;
+                    }
+                });
+                localStorage.setItem('language', language);
+            }
+        </script>
+    </div>
+</header>
+<h1 data-pt="Ler é para TODOS!" data-en="Reading is for EVERYONE!"></h1>
+<section class="text-image left">
+    <div class="container">
+        <article>
+            <p data-pt="O projeto foi desenvolvido com a missão de conscientizar as pessoas de que, mesmo com dislexia, a leitura é não apenas possível, mas também fundamental."
+               data-en="The project was developed with the mission of raising awareness that, even with dyslexia, reading is not only possible but also essential.">
+            </p>
+        </article>
+        <img class="characters" src="../img/menina_lendo_livro.jpeg">
+    </div>
+</section>
+<section class="text-image right">
+    <div class="container">
+        <img class="characters" src="../img/menina_sentada_lendo_livro.jpeg">
+        <article>
+            <p data-pt="A iniciativa busca desmistificar preconceitos e incentivar novas formas de interação com os livros, promovendo a inclusão e o prazer pela leitura. Com recursos adequados, todos podem descobrir o poder da leitura e superar as barreiras da sociedade."
+               data-en="The initiative seeks to demystify prejudices and encourage new ways of interacting with books, promoting inclusion and the joy of reading. With appropriate resources, everyone can discover the power of reading and overcome societal barriers.">
+            </p>
+        </article>
+    </div>
+</section>
+
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+</body>
+</html>
